@@ -1,0 +1,89 @@
+{
+  "group": "IT-2511",
+  "baseRevision": "0c5ff8a8bb1e3792fc80e502bcdec1942a2f10e3",
+  "baseRepository": "https://github.com/Abenovv/Midterm-Web_Technologies-1stTerm",
+  "targetRepository": "https://github.com/Abenovv/EndTerm-WebTechnology",
+  "status": "Prepared assignments, not evidence of completed personal authorship",
+  "commonInfrastructure": [
+    ".gitignore",
+    "assets/vendor/jquery-3.7.1.min.js",
+    "assets/vendor/JQUERY-LICENSE.txt",
+    "css/endterm.css",
+    "js/data.js",
+    "js/shared.js",
+    "package.json",
+    "package-lock.json",
+    "tests/serve.cjs",
+    "tests/run-domain.cjs"
+  ],
+  "members": [
+    {
+      "name": "Yerkebulan Abenov",
+      "github": "Abenovv",
+      "files": [
+        "index.html",
+        "community.html",
+        "js/home.js",
+        "js/community.js",
+        "tests/yerkebulan.test.cjs"
+      ],
+      "delete": []
+    },
+    {
+      "name": "Assan Nurbergen",
+      "github": "nurbergenasan161-dotcom",
+      "files": [
+        "games.html",
+        "emberwake.html",
+        "js/games.js",
+        "js/emberwake.js",
+        "tests/assan.test.cjs"
+      ],
+      "delete": []
+    },
+    {
+      "name": "Kuvandyk Bekarys",
+      "github": "kuvandykbekarys-star",
+      "files": [
+        "studio.html",
+        "js/studio.js",
+        "tests/bekarys.test.cjs",
+        "tests/browser.test.cjs",
+        "README.md",
+        "assets/favicon.svg",
+        "css/community.css",
+        "css/emberwake.css",
+        "css/games.css",
+        "css/home.css",
+        "css/studio.css",
+        "css/style.css",
+        "docs/ownership.json",
+        "docs/report.html",
+        "docs/verification.json",
+        "tools/capture-report.cjs",
+        ".github/workflows/static.yml",
+        "assets/fonts/DM-SANS-LICENSE.txt",
+        "assets/fonts/SPACE-GROTESK-LICENSE.txt",
+        "assets/vendor/BOOTSTRAP-LICENSE.txt",
+        "assets/vendor/bootstrap.bundle.min.js",
+        "assets/vendor/bootstrap.min.css",
+        "docs/screenshots/catalogue.png",
+        "docs/screenshots/collaboration.png",
+        "docs/screenshots/evening.png",
+        "docs/screenshots/expedition.png",
+        "docs/screenshots/home-finder.png",
+        "docs/screenshots/report-preview.png",
+        "docs/screenshots/responsive-1280.png",
+        "docs/screenshots/responsive-375.png",
+        "docs/screenshots/responsive-768.png",
+        "docs/screenshots/roadmap.png",
+        "docs/screenshots/validation.png"
+      ],
+      "delete": [
+        "js/site.js"
+      ]
+    }
+  ],
+  "integrationOwner": "Yerkebulan prepares common runtime; each page owner integrates their page; Bekarys adds final browser suite/report and removes superseded site.js",
+  "sequence": "1 then 2 after 1 is published, then 3 after 2 is reviewed and merged; no automatic merges"
+}

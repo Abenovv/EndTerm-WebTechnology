@@ -1,59 +1,77 @@
-# SIDEQUEST
+# SIDEQUEST — Endterm
 
-A five-page student website for **Web Technologies 1**, group **IT-2511**.
+A five-page continuation of our Web Technologies 1 Midterm, group **IT-2511**. The original three game worlds, artwork, local Bootstrap, DM Sans font, page structure and orange/dark theme are retained.
 
-Team: Yerkebulan Abenov, Assan Nurbergen, Kuvandyk Bekarys.
+Open **index.html** directly, or run `npm start` from this folder and visit http://127.0.0.1:8768. Opening the website needs no installation, backend or internet connection. These are game concepts; the planners save local choices and do not book real events or send emails.
 
-## Open the website
+## Team and responsibilities
 
-Open `index.html` in a browser. The pages, Bootstrap, fonts, and images are local, so there is no install or build step.
+| Member                     | Pages and logic                                                                                                                 | Owned tests                                                  |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Yerkebulan Abenov, IT-2511 | Home mood/time recommendations, persistent session shortlist; Community activity search/filter, evening total, preferences form | `tests/yerkebulan.test.cjs`, corresponding browser scenarios |
+| Assan Nurbergen, IT-2511   | Games search/filter/sort/comparison; Emberwake route ribbon, optional stops, group estimate and expedition form                 | `tests/assan.test.cjs`, corresponding browser scenarios      |
+| Kuvandyk Bekarys, IT-2511  | Studio roadmap filter, task estimate, collaboration brief and weekly estimate; final integration of browser checks/report       | `tests/bekarys.test.cjs`, corresponding browser scenarios    |
 
-The website uses HTML, CSS, and a small JavaScript file. Images, fonts, and Bootstrap are supporting assets. Python is not part of the website.
+These are prepared responsibilities for review and individual development. Packages and assigned files do not prove personal authorship or completed defense. Each member must review, explain and commit their own work using their own account.
 
-## Pages and assigned owners
+## Changes since the Midterm
 
-| Page | Files | Assigned owner |
-| --- | --- | --- |
-| Home | `index.html`, `css/home.css` | Yerkebulan |
-| Community | `community.html`, `css/community.css` | Yerkebulan |
-| Game catalog | `games.html`, `css/games.css` | Nurbergen |
-| Emberwake | `emberwake.html`, `css/emberwake.css` | Nurbergen |
-| Studio | `studio.html`, `css/studio.css` | Bekarys |
+The three static game cards become eight DOM-rendered concept sessions, each with seven properties. Search, genre and duration sorting combine without reloading. Up to three sessions can be compared; saved sessions persist across pages. Home finds up to three sessions within a time budget and handles an empty result.
 
-Shared styles are in `css/style.css`. Small interactions are in `js/site.js`.
+Emberwake calculates route minutes plus optional photo/lore stops and participant-minutes. Community renders eight activities, filters by format/text and calculates a saved evening duration. Studio renders eight production tasks, keeps selections across filters and estimates collaboration weeks using `Math.ceil(taskHours / weeklyHours)`.
 
-Each page owner should review their files, make their own changes where needed, and commit using their own GitHub account. The assigned roles are a handoff plan, not a record of work already completed by each person.
+Every member has a Bootstrap form with at least six controls. Required fields, email, numeric boundaries, dates and phone/message rules are checked with JavaScript. Errors appear below the field, update as it is corrected and are absent on first load. A successful submission clears the form. Storage failures preserve entered values and prior stored data. Emails and phone numbers are validated but not saved.
 
-## What works
+The shared navigation now exposes all five pages, including Emberwake. Its current page is highlighted. Keyboard focus, skip links, labelled fields, descriptive image alternatives and reduced motion are supported. The trail ribbon provides a visual itinerary using the existing design.
 
-- Shared responsive Bootstrap navigation.
-- Game filtering by genre.
-- A local saved-game list for Emberwake.
-- A Bootstrap FAQ accordion.
-- A validated community form that saves preferences in the browser.
-- Game comparison and meetup tables.
+No Midterm defense feedback was supplied. These are verified improvements found by inspecting the source; specific instructor remarks still need to be checked with the team.
 
-The form does not send data or register people for an event. All games are concepts, with no downloadable builds.
+## Requirement map
 
-## Publish on GitHub Pages
+| Requirement                                      | Implementation                                                                               | Evidence / demonstration                                                              |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Five pages for three members                     | `index.html`, `games.html`, `emberwake.html`, `community.html`, `studio.html`                | Browser checks at 375, 768 and 1280px; internal links and fragments                   |
+| Bootstrap forms, inline validation and reset     | Three `data-form` forms; `js/shared.js` → `bindForm`; `js/data.js` → `validate`              | Submit empty; correct fields; save; reload; block storage                             |
+| Array of at least eight objects and DOM creation | `js/data.js`: sessions, activities, tasks; page scripts call `UI.element` / `UI.sessionCard` | 8 catalogue cards, 8 activities and 8 roadmap tasks                                   |
+| Two interactive features per member              | Recommendation + evening planner; catalogue + expedition; roadmap + collaboration estimator  | Browser and member-owned calculation tests                                            |
+| Calculated values and events                     | Duration totals, participant-minutes, weeks; `click`, `input`, `change`, `submit`, `keydown` | First-light route with both stops = 55min; two participants = 110 participant-minutes |
+| Three useful jQuery effects                      | `js/shared.js`: `slideDown`/`slideUp` help, `fadeIn` results/success, `animate` back-to-top  | Help on every page; form success / Home finder; Back to top                           |
+| Repeated clicks and reduced motion               | `.stop(true,true)` clears effect queues; media preference sets duration to zero              | Repeated accordion clicks and reduced-motion browser scenarios                        |
+| Empty/error states                               | Empty catalogue/finder/planner, numeric validation, storage failures                         | Dedicated browser scenarios                                                           |
+| Credits on website and report                    | `studio.html#credits`, report, asset license files                                           | Local Bootstrap, jQuery, fonts; credited inherited AI artwork and Codex assistance    |
+| GitHub Pages and individual history              | Inherited `.github/workflows/static.yml`                                                     | Publication and authentic member activity remain pending                              |
 
-After all team members have pushed their reviewed files:
+## Tests
 
-1. Open the repository's **Settings → Pages**.
-2. Choose **Deploy from a branch**.
-3. Select **main** and **/(root)**, then save.
-4. Wait for GitHub Pages to finish and check all five pages.
+Node.js 22 or newer is used for the verification tools. Run from the extracted project root:
 
-Publication address: https://abenovv.github.io/Midterm-Web_Technologies-1stTerm/
+```text
+npm ci
+npx playwright install chromium
+npm test
+```
 
-This address is not confirmed live until the repository is published. The report must be updated to reflect the final deployment and actual contributions before submission.
+On Windows, tests automatically use installed Chrome or Edge when present. On other systems they use Playwright Chromium. `SIDEQUEST_BROWSER` can point to another Chromium executable. `npm run test:domain` runs calculations and validation without a browser. The latest exact result and environment are recorded in `docs/verification.json` after final extraction checks. No production build is needed for this static website.
 
-## Report and screenshots
+The browser suite checks all pages at three widths, local links and fragments, image loading, heading order, navigation, focusability, searches, totals, comparison limits, reload persistence, form correction/reset, storage failure, corrupted data, animation queues and reduced motion. Width checks detect horizontal overflow; automated checks do not replace visual review.
 
-The DOCX report is in `docs/`. Real Chromium screenshots are in `docs/screenshots/`, at widths 375, 768, and 1280 pixels. `docs/validation.json` contains the browser check results.
+## Continuity, publication and submission
 
-The `scripts/` folder contains preparation tools and is excluded from Git. It is not needed to open or publish the website. A clean copy containing only the website and its supporting assets is in `handoff/website/` and `handoff/Website-HTML-CSS-JS.zip`.
+Midterm source: https://github.com/Abenovv/Midterm-Web_Technologies-1stTerm at `0c5ff8a8bb1e3792fc80e502bcdec1942a2f10e3`.
+
+Requested Endterm target: https://github.com/Abenovv/EndTerm-WebTechnology.
+
+Planned Pages URL: https://abenovv.github.io/EndTerm-WebTechnology/ — **not published or verified live by this preparation**. The supplied rubric requires the same repository as the Midterm. Obtain the instructor's approval for the requested new repository or publish the continuation to the Midterm repository instead. Helpers target the repository supplied by the user and preserve the Midterm history when bootstrapping. They do not push until explicitly invoked.
+
+No commits, pushes, merges or deployment were performed on GitHub. No deadline was supplied; check it before committing. Real member commits, instructor feedback and the final live URL must be confirmed before LMS submission.
+
+Each member must upload **both** `Endterm_YerkebulanAbenov_AssanNurbergen_KuvandykBekarys.zip` and the separately supplied `.pdf` with the same stem. The assignment's naming overrides the playbook's generic Assignment-number names. Teammate outer packages and `Contribution.zip` are not LMS submissions.
 
 ## Credits
 
-Original game concept artwork was made using OpenAI image generation. Bootstrap 5.3.8 is MIT-licensed. DM Sans is under the SIL Open Font License. License files are included next to the fonts and Bootstrap files. See `studio.html#credits` and `docs/ARTWORK.md`.
+- Bootstrap 5.3.8, MIT: https://getbootstrap.com/ — inherited local layout, navigation and form components; license in `assets/vendor/`.
+- jQuery 3.7.1, MIT: https://jquery.com/ — local help accordion, fade feedback and smooth scrolling; license in `assets/vendor/`.
+- DM Sans by Colophon Foundry, SIL Open Font License: https://fonts.google.com/specimen/DM+Sans — inherited local font and license in `assets/fonts/`.
+- Original Midterm concept artwork was made with OpenAI image generation. Session variants reuse the artwork for their corresponding original worlds; images are concepts, not gameplay screenshots.
+- OpenAI Codex assisted with Endterm code, automated checks, report and packages. No downloaded website template was used. Prepared work still requires each member's review and understanding.
+- Playwright (Apache-2.0) and Prettier (MIT) are development tools only, not runtime dependencies; versions are pinned in `package-lock.json`.
