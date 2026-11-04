@@ -1,0 +1,31 @@
+{
+  "tests": 55,
+  "domainTests": 25,
+  "browserTests": 30,
+  "failures": 0,
+  "environment": "Windows 11 x64; Node.js v24.17.0; npm 11.13.0",
+  "browser": "156.0.8078.80",
+  "widths": [
+    375,
+    768,
+    1280
+  ],
+  "checkedOn": "2026-11-04",
+  "productionBuild": "Not needed: static HTML/CSS/JavaScript",
+  "deployment": "Not published",
+  "cleanExtraction": {
+    "status": "passed",
+    "tests": 55,
+    "failures": 0,
+    "npmCi": "passed",
+    "snapshotSha256": "4d0967ea8ffc4be0cb1bfcb55d85a90c0212b558378e9d81050ba518469052e0",
+    "fixture": "C:\\Users\\yerke\\OneDrive\\Desktop\\Study\\.assignment_tools\\clean-lms-f1ee593c\\project",
+    "note": "Final delivery differs only in updated documentation/verification metadata; executable source is compared byte for byte after final packaging."
+  },
+  "contributionHelpers": {
+    "checks": 21,
+    "failures": 0,
+    "platform": "Windows PowerShell 5.1",
+    "publication": "Isolated local bare Git fixtures only; no GitHub pushes or merges."
+  }
+}
