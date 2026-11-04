@@ -1,0 +1,234 @@
+.tool-grid,
+.finder {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: end;
+}
+.finder {
+  grid-template-columns: 1fr 1fr auto;
+}
+.work-panel,
+.saved-box {
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+  margin-bottom: 22px;
+}
+.saved-box {
+  border-left: 4px solid var(--orange);
+  margin-top: 24px;
+}
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 24px 0;
+}
+.catalog-grid > * {
+  min-width: 0;
+}
+.game-card {
+  transition:
+    transform 0.16s,
+    border-color 0.16s;
+}
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--orange);
+}
+.button,
+.filter-button {
+  transition:
+    background-color 0.16s,
+    transform 0.16s;
+}
+.button:hover {
+  transform: translateY(-1px);
+}
+.button.secondary {
+  background: transparent;
+  color: var(--orange);
+}
+.button.secondary:hover {
+  background: #41352e;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+.compare-button {
+  display: block;
+  margin-top: 12px;
+}
+.card-body .text-link {
+  display: block;
+}
+.comparison-grid,
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.roadmap-card {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+.roadmap-card h3 {
+  margin-top: 14px;
+}
+.empty-state {
+  padding: 24px;
+  background: var(--panel);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  grid-column: 1/-1;
+}
+.form-control,
+.form-select {
+  color: var(--text);
+  background-color: #191c20;
+  border-color: #78818c;
+  min-height: 44px;
+}
+.form-control:focus,
+.form-select:focus {
+  color: var(--text);
+  background-color: #191c20;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px #ff996f40;
+}
+.form-control::placeholder {
+  color: var(--muted);
+}
+.field-error {
+  color: #ffb2ae;
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+.field-error:empty {
+  display: none;
+}
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #ffb2ae;
+}
+.form-feedback {
+  color: #c5edc4;
+  background: #243a2d;
+  border: 1px solid #719b72;
+  padding: 14px;
+  margin-top: 18px;
+  border-radius: 5px;
+}
+.form-check-input {
+  margin-right: 10px;
+}
+.help-box {
+  border-bottom: 1px solid var(--line);
+}
+.help-box h3 {
+  margin: 0;
+}
+.help-toggle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 0;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+.help-toggle:hover {
+  color: var(--orange);
+}
+#page-help {
+  color: var(--muted);
+  padding: 12px 0;
+}
+.option-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 24px 0;
+}
+.trail-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 22px 0;
+  counter-reset: stop;
+}
+.trail-ribbon li {
+  counter-increment: stop;
+  padding: 12px;
+  color: #191c20;
+  background: var(--orange);
+  border-radius: 4px;
+}
+.trail-ribbon li::before {
+  content: counter(stop) " / ";
+  font-weight: bold;
+}
+.task-choice {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.task-choice input,
+.option-row input {
+  accent-color: var(--orange);
+  width: 18px;
+  height: 18px;
+}
+.detail-nav {
+  margin-left: 22px;
+}
+.device-notice {
+  color: #ffb2ae;
+  margin-top: 20px;
+}
+main {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 991px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .detail-nav {
+    margin-left: 0;
+  }
+  .tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 575px) {
+  .catalog-grid,
+  .comparison-grid,
+  .roadmap-grid,
+  .tool-grid,
+  .finder {
+    grid-template-columns: 1fr;
+  }
+  .work-panel,
+  .saved-box {
+    padding: 18px;
+  }
+  .row-layout {
+    grid-template-columns: 1fr;
+  }
+  .button {
+    max-width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-card:hover,
+  .button:hover {
+    transform: none;
+  }
+}

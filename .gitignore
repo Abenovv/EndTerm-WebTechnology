@@ -2,6 +2,6 @@ node_modules/
 __pycache__/
 .DS_Store
 *.log
-docs/screenshots/*-full.png
 handoff/
 scripts/
+test-results/

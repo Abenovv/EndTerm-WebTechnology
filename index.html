@@ -1,40 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SIDEQUEST student game studio website: Home. IT-2511, Web Technologies 1.">
-    <meta name="theme-color" content="#151615">
-    <title>
-      Home | SIDEQUEST
-    </title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/fonts/dm-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
-    <script src="assets/vendor/bootstrap.bundle.min.js" defer>
-    </script>
-    <script src="js/site.js" defer>
-    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SIDEQUEST student game studio website: Home. IT-2511, Web Technologies 1."
+    />
+    <meta name="theme-color" content="#151615" />
+    <title>Home | SIDEQUEST</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/dm-sans-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/endterm.css" />
+    <script src="assets/vendor/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/jquery-3.7.1.min.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/shared.js" defer></script>
+    <script src="js/home.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">
-      Skip to content
-    </a>
+    <a class="skip-link" href="#main"> Skip to content </a>
     <header class="site-header">
       <nav class="navbar navbar-expand-lg shell" aria-label="Main navigation">
         <a class="brand" href="index.html" aria-label="SIDEQUEST home">
           <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M12 2h8v10h10v8H20v10h-8V20H2v-8h10z" fill="currentColor"/>
+            <path
+              d="M12 2h8v10h10v8H20v10h-8V20H2v-8h10z"
+              fill="currentColor"
+            />
           </svg>
-          <span>
-            SIDEQUEST
-          </span>
+          <span> SIDEQUEST </span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon">
-          </span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-navigation"
+          aria-controls="main-navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"> </span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
           <ul class="navbar-nav">
@@ -44,101 +60,95 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="games.html">
-                Our games
-              </a>
+              <a class="nav-link" href="games.html"> Our games </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="community.html">
-                Community
-              </a>
+              <a class="nav-link" href="community.html"> Community </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="studio.html">
-                The studio
-              </a>
+              <a class="nav-link" href="studio.html"> The studio </a>
             </li>
           </ul>
-          <a class="nav-cta" href="community.html#playtest">
-            Playtest preferences
-          </a>
+          <a class="nav-link detail-nav" href="emberwake.html">Emberwake</a
+          ><a class="nav-cta" href="community.html#playtest">Plan a session</a>
         </div>
       </nav>
     </header>
     <main id="main">
       <section class="shell home-hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">
-            Student game development team
-          </p>
+          <p class="eyebrow">Student game development team</p>
           <h1 id="hero-title">
             Welcome to
-            <span class="accent">
-              SIDEQUEST
-            </span>
+            <span class="accent"> SIDEQUEST </span>
           </h1>
           <p>
-            We are three students who enjoy games and want to make our own. This website introduces our game ideas and the team behind them.
+            We are three students who enjoy games and want to make our own. This
+            website introduces our game ideas and the team behind them.
           </p>
           <p>
-            Explore our games or visit the community page to choose which one you would like to try.
+            Explore our games or visit the community page to choose which one
+            you would like to try.
           </p>
-          <a class="button" href="games.html">
-            See our games
-          </a>
+          <a class="button" href="games.html"> See our games </a>
         </div>
         <figure class="hero-image">
           <a href="emberwake.html">
-            <img src="assets/images/emberwake.webp" alt="An orange-cloaked traveler exploring ancient ruins in a golden valley" width="1200" height="800" fetchpriority="high">
+            <img
+              src="assets/images/emberwake.webp"
+              alt="An orange-cloaked traveler exploring ancient ruins in a golden valley"
+              width="1200"
+              height="800"
+              fetchpriority="high"
+            />
           </a>
-          <figcaption>
-            Emberwake — our adventure game concept
-          </figcaption>
+          <figcaption>Emberwake — our adventure game concept</figcaption>
         </figure>
       </section>
-      <section class="shell section-pad rule" aria-labelledby="home-games-title">
+      <section
+        class="shell section-pad rule"
+        aria-labelledby="home-games-title"
+      >
         <div class="section-heading">
-          <h2 id="home-games-title">
-            Our game ideas
-          </h2>
-          <a class="text-link" href="games.html">
-            View all games →
-          </a>
+          <h2 id="home-games-title">Our game ideas</h2>
+          <a class="text-link" href="games.html"> View all games → </a>
         </div>
         <div class="home-game-grid">
           <article class="game-card">
             <a href="emberwake.html">
-              <img src="assets/images/emberwake.webp" alt="Emberwake's mountain valley and ancient stone arches" width="1200" height="800" loading="lazy">
+              <img
+                src="assets/images/emberwake.webp"
+                alt="Emberwake's mountain valley and ancient stone arches"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
             </a>
             <div class="card-body">
-              <span class="tag">
-                Adventure
-              </span>
+              <span class="tag"> Adventure </span>
               <h3>
-                <a href="emberwake.html">
-                  Emberwake
-                </a>
+                <a href="emberwake.html"> Emberwake </a>
               </h3>
               <p>
                 Explore an old valley, solve puzzles, and discover its history.
               </p>
-              <a class="text-link" href="emberwake.html">
-                Read more →
-              </a>
+              <a class="text-link" href="emberwake.html"> Read more → </a>
             </div>
           </article>
           <article class="game-card">
             <a href="games.html#orbit-post">
-              <img src="assets/images/orbit-post.webp" alt="An astronaut delivering mail on a colourful moon" width="1200" height="800" loading="lazy">
+              <img
+                src="assets/images/orbit-post.webp"
+                alt="An astronaut delivering mail on a colourful moon"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
             </a>
             <div class="card-body">
-              <span class="tag">
-                Cozy exploration
-              </span>
+              <span class="tag"> Cozy exploration </span>
               <h3>
-                <a href="games.html#orbit-post">
-                  Orbit Post
-                </a>
+                <a href="games.html#orbit-post"> Orbit Post </a>
               </h3>
               <p>
                 Deliver letters between small planets and meet their residents.
@@ -150,18 +160,18 @@
           </article>
           <article class="game-card">
             <a href="games.html#after-hours">
-              <img src="assets/images/after-hours.webp" alt="A small noodle shop on a rainy city street at night" width="1200" height="800" loading="lazy">
+              <img
+                src="assets/images/after-hours.webp"
+                alt="A small noodle shop on a rainy city street at night"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
             </a>
             <div class="card-body">
-              <span class="tag">
-                Puzzle
-                &amp;
-                story
-              </span>
+              <span class="tag"> Puzzle &amp; story </span>
               <h3>
-                <a href="games.html#after-hours">
-                  After Hours
-                </a>
+                <a href="games.html#after-hours"> After Hours </a>
               </h3>
               <p>
                 Run a late-night shop and learn about the people who visit it.
@@ -173,31 +183,98 @@
           </article>
         </div>
       </section>
+      <section class="shell section-pad rule" id="discover">
+        <h2>Your next sidequest</h2>
+        <p class="intro">
+          One quiet evening or a longer adventure? Find a concept session that
+          fits your mood and time.
+        </p>
+        <div class="work-panel finder">
+          <div>
+            <label class="form-label" for="mood">Your mood</label
+            ><select id="mood" class="form-select">
+              <option value="all">Surprise me</option>
+              <option value="adventure">Explore a valley</option>
+              <option value="cozy">Take it easy</option>
+              <option value="puzzle">Solve a mystery</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="minutes">Minutes to spare</label
+            ><input
+              id="minutes"
+              class="form-control"
+              type="number"
+              min="10"
+              max="180"
+              value="45"
+              aria-describedby="minutes-error"
+            />
+            <p class="field-error" id="minutes-error" aria-live="polite"></p>
+          </div>
+          <button class="button" id="recommend">Find my sidequest</button>
+        </div>
+        <div id="recommendations" class="catalog-grid" aria-live="polite"></div>
+      </section>
+      <section class="shell section-pad rule">
+        <h2>Your saved sessions</h2>
+        <p>Keep a shortlist across pages. Stored on this device only.</p>
+        <div id="saved-games" class="catalog-grid" aria-live="polite"></div>
+        <p id="saved-total" role="status"></p>
+        <button class="button secondary" id="clear-games">
+          Clear my shortlist
+        </button>
+      </section>
       <section class="info-section section-pad">
         <div class="shell row-layout">
           <div>
-            <h2>
-              About our project
-            </h2>
+            <h2>About our project</h2>
             <p>
-              SIDEQUEST is a game studio concept for our Web Technologies 1 midterm. We chose games because all three of us are interested in them.
+              SIDEQUEST is a game studio concept for our Web Technologies 1
+              project, continued from the Midterm. We chose games because all
+              three of us are interested in them.
             </p>
-            <a class="text-link" href="studio.html">
-              Meet our team →
-            </a>
+            <a class="text-link" href="studio.html"> Meet our team → </a>
           </div>
           <div>
-            <h2>
-              Join the conversation
-            </h2>
+            <h2>Join the conversation</h2>
             <p>
-              Our games are still ideas. On the community page, you can save your favourite game and preferred playtest format.
+              Our games are still ideas. On the community page, you can save
+              your favourite game and preferred playtest format.
             </p>
             <a class="text-link" href="community.html">
               Visit the community →
             </a>
           </div>
         </div>
+      </section>
+      <section class="shell section-pad rule">
+        <h2>Before you begin</h2>
+        <div class="help-box">
+          <h3>
+            <button
+              type="button"
+              class="help-toggle"
+              aria-expanded="false"
+              aria-controls="page-help"
+            >
+              How does the session finder work?
+              <span aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div id="page-help" hidden>
+            <p>
+              This is a student concept website. Choices are saved only in this
+              browser; no registration, email or payment is sent. You can clear
+              your saved choices at any time.
+            </p>
+            <p>
+              Use Tab to move between controls and Enter or Space to activate
+              buttons. Your selections update without reloading.
+            </p>
+          </div>
+        </div>
+        <a class="text-link" href="#main" data-scroll>Back to top ↑</a>
       </section>
     </main>
     <footer class="site-footer">
@@ -206,45 +283,38 @@
           <div>
             <a class="brand" href="index.html">
               <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
-                <path d="M12 2h8v10h10v8H20v10h-8V20H2v-8h10z" fill="currentColor"/>
+                <path
+                  d="M12 2h8v10h10v8H20v10h-8V20H2v-8h10z"
+                  fill="currentColor"
+                />
               </svg>
-              <span>
-                SIDEQUEST
-              </span>
+              <span> SIDEQUEST </span>
             </a>
             <p class="footer-description">
               A student game development project.
-              <br>
+              <br />
               IT-2511 · Web Technologies 1
             </p>
           </div>
           <nav class="footer-links" aria-label="Footer navigation">
-            <a href="games.html">
-              Our games
-            </a>
-            <a href="community.html">
-              Community
-            </a>
-            <a href="studio.html">
-              The studio
-            </a>
-            <a href="https://github.com/Abenovv/Midterm-Web_Technologies-1stTerm" target="_blank" rel="noopener noreferrer">
+            <a href="games.html"> Our games </a>
+            <a href="community.html"> Community </a>
+            <a href="studio.html"> The studio </a>
+            <a
+              href="https://github.com/Abenovv/EndTerm-WebTechnology"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub ↗
             </a>
           </nav>
         </div>
         <div class="footer-bottom">
+          <span> © 2026 SIDEQUEST · A student game studio concept. </span>
           <span>
-            © 2026 SIDEQUEST · A student game studio concept.
-          </span>
-          <span>
-            4 October 2026
-            <span aria-hidden="true">
-              /
-            </span>
-            <a href="studio.html#credits">
-              Asset credits
-            </a>
+            4 November 2026
+            <span aria-hidden="true"> / </span>
+            <a href="studio.html#credits"> Asset credits </a>
           </span>
         </div>
       </div>
